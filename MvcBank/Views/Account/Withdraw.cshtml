@@ -1,0 +1,11 @@
+﻿
+@{
+    ViewBag.Title = "Withdraw";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>You cannot withdraw money more than three times and you already withdraw money three times</h2>
+
+@Html.ActionLink("Back to previous page", "Index", "Account", null, new { @class = "btn btn-primary" })
+
+@Html.ActionLink("Log out", "Exit", "Account", null, new { @class = "btn btn-primary" })
