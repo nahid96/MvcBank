@@ -7,13 +7,13 @@ namespace MvcBank.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class InitialModel : IMigrationMetadata
+    public sealed partial class AlterModel : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialModel));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AlterModel));
         
         string IMigrationMetadata.Id
         {
-            get { return "201811191723574_InitialModel"; }
+            get { return "201811270432054_AlterModel"; }
         }
         
         string IMigrationMetadata.Source

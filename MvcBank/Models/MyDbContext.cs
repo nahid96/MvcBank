@@ -13,6 +13,7 @@ namespace MvcBank.Models
 
         }
 
-        public DbSet<Record> Records { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<TransactionHistory> TransactionHistories { get; set; }
     }
 }

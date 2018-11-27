@@ -1,0 +1,11 @@
+﻿
+@{
+    ViewBag.Title = "NotWithdraw";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>You cannot withdraw money because you don't have sufficient money in your account</h2>
+
+@Html.ActionLink("Back to Dashboard", "Dashboard", "Bank", null, new { @class = "btn btn-primary" })
+
+@Html.ActionLink("Log out", "Logout", "Bank", null, new { @class = "btn btn-primary" })

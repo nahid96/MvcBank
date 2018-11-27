@@ -1,17 +1,17 @@
-﻿@model MvcBank.Models.Record
+﻿@model MvcBank.Models.User
 
 @{
-    ViewBag.Title = "Login";
+    ViewBag.Title = "Dashboard";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Please enter your card No. and pin No.</h2>
 
-@using (Html.BeginForm("Details", "Login"))
+@using (Html.BeginForm("IndexPost", "Bank"))
 {
     <div class="form-group">
-        @Html.LabelFor(b => b.CardNo)
-        @Html.TextBoxFor(b => b.CardNo, new { @class = "form-control" })
+        @Html.LabelFor(b => b.CardNumber)
+        @Html.TextBoxFor(b => b.CardNumber, new { @class = "form-control" })
     </div>
     <div class="form-group">
         @Html.LabelFor(b => b.Pin)
@@ -20,4 +20,3 @@
     @Html.HiddenFor(b => b.Id)
     <button type="submit" class="btn btn-primary">Login</button>
 }
-

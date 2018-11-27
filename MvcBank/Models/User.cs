@@ -6,17 +6,15 @@ using System.Web;
 
 namespace MvcBank.Models
 {
-    public class Record
+    public class User
     {
         public int Id { get; set; }
 
-        [Display(Name = "Card No.")]
-        public int CardNo { get; set; }
+        [Display(Name = "Card Number")]
+        public int CardNumber { get; set; }
 
         public int Pin { get; set; }
 
         public int Balance { get; set; }
-
-        public int Count { get; set; }      
     }
 }

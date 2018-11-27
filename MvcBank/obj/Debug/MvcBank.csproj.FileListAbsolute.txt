@@ -95,5 +95,4 @@ E:\headblocks\MvcBank\MvcBank\obj\Debug\MvcBank.dll
 E:\headblocks\MvcBank\MvcBank\obj\Debug\MvcBank.pdb
 E:\headblocks\MvcBank\MvcBank\obj\Debug\MvcBank.Migrations.InitialModel.resources
 E:\headblocks\MvcBank\MvcBank\obj\Debug\MvcBank.csproj.GenerateResource.cache
-E:\headblocks\MvcBank\MvcBank\obj\Debug\MvcBank.Migrations.AddBalanceToRecord.resources
-E:\headblocks\MvcBank\MvcBank\obj\Debug\MvcBank.Migrations.AddCountToRecord.resources
+E:\headblocks\MvcBank\MvcBank\obj\Debug\MvcBank.Migrations.AlterModel.resources

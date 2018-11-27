@@ -7,13 +7,13 @@ namespace MvcBank.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class AddCountToRecord : IMigrationMetadata
+    public sealed partial class InitialModel : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddCountToRecord));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialModel));
         
         string IMigrationMetadata.Id
         {
-            get { return "201811231853280_AddCountToRecord"; }
+            get { return "201811262159110_InitialModel"; }
         }
         
         string IMigrationMetadata.Source

@@ -154,26 +154,23 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BankController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201811191723574_InitialModel.cs" />
-    <Compile Include="Migrations\201811191723574_InitialModel.Designer.cs">
-      <DependentUpon>201811191723574_InitialModel.cs</DependentUpon>
+    <Compile Include="Migrations\201811262159110_InitialModel.cs" />
+    <Compile Include="Migrations\201811262159110_InitialModel.Designer.cs">
+      <DependentUpon>201811262159110_InitialModel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201811191845253_AddBalanceToRecord.cs" />
-    <Compile Include="Migrations\201811191845253_AddBalanceToRecord.Designer.cs">
-      <DependentUpon>201811191845253_AddBalanceToRecord.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201811231853280_AddCountToRecord.cs" />
-    <Compile Include="Migrations\201811231853280_AddCountToRecord.Designer.cs">
-      <DependentUpon>201811231853280_AddCountToRecord.cs</DependentUpon>
+    <Compile Include="Migrations\201811270432054_AlterModel.cs" />
+    <Compile Include="Migrations\201811270432054_AlterModel.Designer.cs">
+      <DependentUpon>201811270432054_AlterModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\MyDbContext.cs" />
-    <Compile Include="Models\Record.cs" />
+    <Compile Include="Models\TransactionHistory.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -214,13 +211,17 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Login\Index.cshtml" />
-    <Content Include="Views\Account\Index.cshtml" />
-    <Content Include="Views\Account\Withdraw.cshtml" />
-    <Content Include="Views\Account\Withdraw1.cshtml" />
+    <Content Include="Views\Bank\CheckBalance.cshtml" />
+    <Content Include="Views\Bank\Index.cshtml" />
+    <Content Include="Views\Bank\Dashboard.cshtml" />
+    <Content Include="Views\Bank\TransactionDetails.cshtml" />
+    <Content Include="Views\Bank\Withdraw.cshtml" />
+    <Content Include="Views\Bank\NotWithdraw.cshtml" />
+    <Content Include="Views\Bank\WithdrawPost.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Login\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -237,14 +238,11 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201811191723574_InitialModel.resx">
-      <DependentUpon>201811191723574_InitialModel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201811262159110_InitialModel.resx">
+      <DependentUpon>201811262159110_InitialModel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811191845253_AddBalanceToRecord.resx">
-      <DependentUpon>201811191845253_AddBalanceToRecord.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811231853280_AddCountToRecord.resx">
-      <DependentUpon>201811231853280_AddCountToRecord.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201811270432054_AlterModel.resx">
+      <DependentUpon>201811270432054_AlterModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

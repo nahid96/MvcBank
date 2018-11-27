@@ -1,6 +1,7 @@
+using MvcBank.Models;
+
 namespace MvcBank.Migrations
 {
-    using MvcBank.Models;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -19,11 +20,17 @@ namespace MvcBank.Migrations
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
-            
-            context.Records.AddOrUpdate( x => x.Id,
-            new Record() { Id =1, CardNo = 1234, Pin = 123, Balance = 5000, Count = 0},
-            new Record() { Id =2, CardNo = 5678, Pin = 567, Balance = 3000, Count = 0},
-            new Record() { Id =3, CardNo = 9012, Pin = 901, Balance = 2000, Count = 0}
+
+            context.Users.AddOrUpdate(x => x.Id,
+                new User() { Id = 1, CardNumber = 1234, Pin = 123, Balance = 5000 },
+                new User() { Id = 2, CardNumber = 5678, Pin = 567, Balance = 3000 },
+                new User() { Id = 3, CardNumber = 9012, Pin = 901, Balance = 2000 }
+            );
+
+            context.TransactionHistories.AddOrUpdate(x => x.Id,
+                new TransactionHistory() { Id = 1, TransactionCount = 0, TransactionAmount = 0, UserId = 1},
+                new TransactionHistory() { Id = 2, TransactionCount = 0, TransactionAmount = 0, UserId = 2 },
+                new TransactionHistory() { Id = 3, TransactionCount = 0, TransactionAmount = 0, UserId = 3 }
             );
         }
     }

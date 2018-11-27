@@ -1,0 +1,23 @@
+﻿@model MvcBank.Models.User
+
+@{
+    ViewBag.Title = "CheckBalance";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Hello: @Model.CardNumber</h2>
+
+<p>Your Account Balance is @Model.Balance</p>
+
+@Html.ActionLink("Back to Dashboard", "Dashboard", "Bank", null, new { @class = "btn btn-primary" })
+
+<br />
+<br />
+
+<div class="col-lg-12" style="text-align: center">
+    <pre>To exit please click on Log out button</pre>
+</div>
+
+<div class="col-lg-12" style="padding-top: 20px; padding-bottom: 20px;  text-align: right">
+    @Html.ActionLink("Log out", "Logout", "Bank", null, new { @class = "btn btn-primary" })
+</div>

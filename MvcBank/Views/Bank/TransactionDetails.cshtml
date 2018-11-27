@@ -1,0 +1,22 @@
+﻿@model MvcBank.Models.TransactionHistory
+
+@{
+    ViewBag.Title = "TransactionDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Your last transaction amount is @Model.TransactionAmount tk.</h2>
+
+@Html.ActionLink("Back to Dashboard", "Dashboard", "Bank", null, new { @class = "btn btn-primary" })
+
+<br />
+<br />
+
+<div class="col-lg-12" style="text-align: center">
+    <pre>To exit please click on Log out button</pre>
+</div>
+
+<div class="col-lg-12" style="padding-top: 20px; padding-bottom: 20px;  text-align: right">
+    @Html.ActionLink("Log out", "Logout", "Bank", null, new { @class = "btn btn-primary" })
+</div>
+
