@@ -1,11 +1,18 @@
-﻿@model MvcBank.Models.TransactionHistory
+﻿@model IEnumerable<MvcBank.Models.TransactionHistory>
 
 @{
     ViewBag.Title = "TransactionDetails";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Your last transaction amount is @Model.TransactionAmount tk.</h2>
+<h3>Your Transaction Amount List:</h3>
+
+<ul>
+    @foreach (var amount in Model)
+    {
+        <li>@amount.TransactionAmount Tk.</li>
+    }
+</ul>
 
 @Html.ActionLink("Back to Dashboard", "Dashboard", "Bank", null, new { @class = "btn btn-primary" })
 

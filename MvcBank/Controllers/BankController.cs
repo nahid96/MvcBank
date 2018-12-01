@@ -20,8 +20,7 @@ namespace MvcBank.Controllers
         {
             _context.Dispose();
         }
-
-        // GET: Bank
+        
         public ActionResult Index()
         {
             return View();
@@ -34,10 +33,7 @@ namespace MvcBank.Controllers
 
             if (userInDb != null)
             {
-                //Session["Id"] = recordInDb.Id.ToString();
-                //Session["CardNumber"] = recordInDb.CardNumber.ToString();
                 Session["Pin"] = userInDb.Pin.ToString();
-                //Session["Balance"] = recordInDb.Balance.ToString();
 
                 return RedirectToAction("Dashboard", "Bank", new {userInDb.Id});
             }
@@ -107,18 +103,25 @@ namespace MvcBank.Controllers
         {
             var userInDb = _context.Users.Where(b => b.Id == id).FirstOrDefault();
 
-            var transactionHistoryInDb = _context.TransactionHistories.Where(b => b.UserId == id).FirstOrDefault();
+            var transactionHistoryInDb = _context.TransactionHistories.Where(b => b.UserId == id).ToList().Count;
 
             if (Convert.ToInt32(Session["Pin"]) == userInDb.Pin)
             {
-                if (transactionHistoryInDb.TransactionCount < 3)
+                if (transactionHistoryInDb < 3)
                 {
                     if (userInDb.Balance >= balance && userInDb.Balance != 0)
                     {
-                        userInDb.Balance = (userInDb.Balance - balance);
-                        transactionHistoryInDb.TransactionAmount = balance;
-                        transactionHistoryInDb.TransactionCount = ++transactionHistoryInDb.TransactionCount;
+                        TransactionHistory transactionHistory = new TransactionHistory()
+                        {
+                            TransactionAmount = balance,
+                            TransactionCount = 1,
+                            UserId = id
 
+                        };
+
+                        userInDb.Balance = (userInDb.Balance - balance);
+
+                        _context.TransactionHistories.Add(transactionHistory);
                         _context.SaveChanges();
 
                         return RedirectToAction("TransactionDetails", "Bank");
@@ -131,14 +134,12 @@ namespace MvcBank.Controllers
                 else
                 {
                     return View();
-                }
+                }      
             }
             else
             {
                 return RedirectToAction("Logout", "Bank");
             }
-            
-            //Session["Balance"] = userInDb.Balance.ToString();
         }
 
         [Route("Bank/{id}/NotWithdraw")]
@@ -151,7 +152,7 @@ namespace MvcBank.Controllers
         public ActionResult TransactionDetails(int id)
         {
             var userInDb = _context.Users.Where(b => b.Id == id).FirstOrDefault();
-            var transactionHistoryInDb = _context.TransactionHistories.Where(b => b.UserId == id).FirstOrDefault();
+            var transactionHistoryInDb = _context.TransactionHistories.Where(b => b.UserId == id).ToList();
             
             if (Convert.ToInt32(Session["Pin"]) == userInDb.Pin)
             {

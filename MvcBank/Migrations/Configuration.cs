@@ -28,7 +28,7 @@ namespace MvcBank.Migrations
             );
 
             context.TransactionHistories.AddOrUpdate(x => x.Id,
-                new TransactionHistory() { Id = 1, TransactionCount = 0, TransactionAmount = 0, UserId = 1},
+                new TransactionHistory() { Id = 1, TransactionCount = 0, TransactionAmount = 0, UserId = 1 },
                 new TransactionHistory() { Id = 2, TransactionCount = 0, TransactionAmount = 0, UserId = 2 },
                 new TransactionHistory() { Id = 3, TransactionCount = 0, TransactionAmount = 0, UserId = 3 }
             );
